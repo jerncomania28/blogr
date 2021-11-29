@@ -1,0 +1,90 @@
+@mixin button-CTA {
+  width: 90px;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 15px;
+  border: none;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+@mixin button-div {
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin textStyle {
+  margin-bottom: 2rem;
+  h3 {
+    // color: red;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    font-weight: 700px;
+    color: $headings_dark_blue;
+  }
+  p {
+    font-size: 13px;
+    font-weight: 500px;
+    text-align: left;
+  }
+}
+
+
+@mixin media-sm($min-width){
+  @media screen and(min-width: $min-width){
+    @content;
+  }
+}
+@mixin media-lg($max-width){
+  @media screen and(max-width: $max-width){
+    @content;
+  }
+}
+
+@mixin media-query($min-width , $max-width){
+  @media screen and (min-width:$min-width) and (max-width:$max-width){
+    @content;
+  }
+}
+
+
+@mixin options{
+  p{
+    color: white;
+  }
+  position: relative;
+  ul{
+    display: none;
+  }
+  &:hover{
+    ul{
+      position: absolute;
+      top: 25px;
+      left: -10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 120px;
+      list-style: none;
+      border: 0px 1px 1px 1px solid black;
+      background: white;
+      // overflow-x: hidden;
+      z-index: 4;
+      li{
+        padding:0.5rem;
+        width: 120px;
+        text-align: center;
+        color: white;
+        background:$footer_background;
+        &:hover{
+          background: salmon;
+        }
+      }
+    }
+  }
+}
